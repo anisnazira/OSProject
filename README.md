@@ -1,6 +1,6 @@
 # OSProject Running Containers for Application Development
 
-Group Name: aisyah and friends
+Group Name: anis and friends
 
 Section: 2
 
