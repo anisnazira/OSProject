@@ -9,25 +9,12 @@ Team Mates:
 2. __NURAMIRATUL AISYAH BINTI RUZAIDI__ and __2212736__
 
 
-## Rules
-1. You are allowed to have **3 group** members. *Exception* is allowed **IFF (if and only if)** you are allowed to have 4 group members if you are a **multinational** or a **multigender** group. 
-2. When you complete the project, make sure to submit the repository link of your cloned project. Make sure all the files are as what you aspect in your repository. 
-3. Answer all questions in the **README.md**, in your own repository. Either use the online VSCode, terminal or github to edit. Answers are expected where you see __Fill answer here__.
-4. Learn how to use markdown. https://www.w3schools.io/file/markdown-introduction/
-
-## Forking this OS project repository
-1. First thing you need in doing this project is to have a github account. Make sure to sign up at https://www.github.com
-2. The second thing you need is to fork the OS project repository in your own github account. 
-
-    1. Go to https://github.com/joeynor/OSProject and click fork to copy the project into your own repository
-    2. Make sure that the new fork is now in your own repository
-
 ***Questions:***
 
 1. What is the link of the fork OSProject in your repository. ***(1 mark)*** <br> __https://github.com/anisnazira/OSProject__.
 2. How many files and folders are in this repository. ***(1 mark)***
-__- 1 readme.md file__
-__- 1 images folder__
+ <br>  __- 1 readme.md file__
+ <br>  __- 1 images folder__
 
 
 ## Exploring github codespaces
