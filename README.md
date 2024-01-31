@@ -19,30 +19,6 @@ Team Mates:
 
 ## Exploring github codespaces
 
-1. The next thing that we will be doing is exploring codespaces. First of all, read about codespaces https://docs.github.com/en/codespaces/overview#what-is-a-codespace
-2. Then go to the link https://github.com/codespaces and we shall start a new codespace.  
-3. Click on ***New codespace***.
-4. Choose your own OSProject repository to start your codespace.
-
- <img src="./images/newcodespace.png" width="50%">
-
-5. Once you have created you codespace, you will see the following. You might already be familiar with this, since it will look similar to VSCode. 
-
- <img src="./images/UIwebvscode.png" width="70%">
-
-6. You will see the [README file](./README.md) file. One is a preview of how it looks like on the web, and the other is the editing view in markdown language. 
-7. Edit the [README file](./README.md). Make sure you have your group details correct, ie, group name, section and team members along with their matric IDs. 
-8. Once you have finish editing, click File->Save or ***ctrl-s*** to save it. 
-9. After saving, you will notice an M or U next to your file. You will need to commit any changes, whenever you make changes so that it is uploaded to the github repository. 
-
- <img src="./images/SourceControlUI.png" width="70%">
-
-10. Click on the source control, hint: its on the left side panel, and it will list down the files that have been modified or updated. Click on commit. It will then ask you "Would you like to stage all your changes and commit them directly?" Just say yes, and a new tab will appear. Type a message to log what you have done, and click on the check mark. 
-
- <img src="./images/CommittingUI.png" width="70%">
-
-11. After that, sync the changes to the main repository. 
-12. Make sure to commit and sync your files to the main repository, or else, your work will be lost since it is not saved into the main repository when you submit your project.
 
 ***Questions:***
 
@@ -53,12 +29,6 @@ Team Mates:
 
 ## Exploring the Terminal
 
-1. Look at the TERMINAL tab. Explore and run commands according to the questions below. 
-2. You can include your answers as images, or cut and paste the output here. If you are cutting and pasting your answers, wrap your answers in the codeblock clause in markdown. For example, if i run the command **whoami** the the output would look like the one below.
-```bash
-@joeynor ➜ /workspaces/OSProject (main) $ whoami 
-codespace
-```
 
 
 
@@ -109,63 +79,9 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** <br> __3006.680 MHz__.
 17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** <br> __top - 18:15:38 up  2:39,  0 users,  load average: 0.19, 0.22, 0.25__.
 
+    
+
 ## Running your own container instance.
-
-1. At the terminal, run a linux instance. By typing the following command. 
-```
-docker pull debian
-docker run --detach -it debian
-```
-2. This will run the debian container. To check if the debian container is running, type
-```bash
-@joeynor ➜ /workspaces/OSProject (main) $ docker ps -a
-CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
-f65be1987f84   debian    "bash"    4 minutes ago   Up 4 minutes             romantic_jackson
-```
-
-3. Keep note of the name used by your container, this is usually given random names unless you specify your own name. Now run a bash command on the container. Make sure you use the name of your container instead of the one shown here. 
-```bash
-docker exec -i -t romantic_jackson /bin/bash
-```
-
-4. Create a file on the container. First you must make sure you are in the bash command prompt of the container. The container is new, and does not have any software other than the debian OS. To create a new file, you will need an editor installed. In the bash shell of the container, run the package manager apt-get to install nano text editor. 
-
-```bash
-root@f65be1987f84:~# apt-get update      
-
-root@f65be1987f84:~# apt-get install nano
-
-root@f65be1987f84:~# cd /root
-
-root@f65be1987f84:~# nano helloworld.txt
-```
-
-5. Edit your helloworld.txt, create your messsage and save by typing ctrl-X. Once saved, explore using the container to see where the file is located. Then exit the shell, by typing **exit**.
-
-6. Stop the container and run **docker ps -a**, and restart the container again. Is your file in the container still available?
-```bash 
-@joeynor ➜ /workspaces/OSProject (main) $ docker stop romantic_jackson
-
-@joeynor ➜ /workspaces/OSProject (main) $ docker ps -a
-CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                        PORTS     NAMES
-f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago             romantic_jackson
-
-@joeynor ➜ /workspaces/OSProject (main) $ docker restart romantic_jackson
-```
-__Yes, still available__.
-
-7. Stop the container and delete the container. What happened to your helloworld.txt?
-
-```bash 
-@joeynor ➜ /workspaces/OSProject (main) $ docker stop romantic_jackson
-
-@joeynor ➜ /workspaces/OSProject (main) $ docker ps -a
-CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS                        PORTS     NAMES
-f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago             romantic_jackson
-
-@joeynor ➜ /workspaces/OSProject (main) $ docker rm romantic_jackson
-```
-__It got deleted__.
 
 ***Questions:***
 
@@ -173,19 +89,6 @@ __It got deleted__.
 2. Can we run two, or three instances of debian linux? . ***(1 mark)*** <br> __Yes, because each container acts like a separate debian linux system, allowing running multiple instances at once__.
 
 ## Running your own container with persistent storage
-
-1. In the previous experiment, you might have notice that containers are not persistent. To make storage persistent, you will need to mount them. 
-At the terminal, create a new directory called **myroot**, and run a instance of debian linux and mount myroot to the container. Find out the exact path of my root, and mount it as the root folder in the debian container. 
-2. Create a file in /root on the container, the files should also appear in myroot of your host VM.
-
-```bash 
-@joeynor ➜ /workspaces/OSProject (main) $ mkdir myroot
-@joeynor ➜ /workspaces/OSProject (main) $ cd myroot/
-@joeynor ➜ /workspaces/OSProject/myroot (main) $ pwd
-/workspaces/OSProject/myroot
-
-@joeynor ➜ /workspaces/OSProject/myroot (main) $ docker run --detach -it -v /workspaces/OSProject/myroot:/root debian
-```
 
 ***Questions:***
 
@@ -200,25 +103,7 @@ sudo chown -R codespace:codespace myroot
 
 ## You are on your own, create your own static webpage
 
-1. Create a directory called webpage in your host machine
-2. Inside the directory, create a page index.html, with any content you would like
-3. Then, run the apache webserver and mount the webpage directory to it. Hint:
-```bash
-## the -p 8080:80 flag points the host port 8080 to the container port 80
 
-docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ -p 8080:80 httpd
-```
-
-4. If it works, codespace will trigger a port assignment and provide a URL for you to access your webpage like the one below.
-
- <img src="./images/websitelink.png" width="70%">
-
-
-5. You can also see the Port in the **PORTS** tab, next to the terminal tab.
-
-6. You can then access your website by adding an index.html towards the end of your url link, like the one below. 
-
- <img src="./images/helloworldweb.png" width="70%">
 
 ***Questions:***
 
