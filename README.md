@@ -239,7 +239,9 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 2. What port is the apache web server running. ***(1 mark)*** <br> __8080__.
 3. What port is open for http protocol on the host machine? ***(1 mark)*** <br> __8080__.
 
-<img src="Port.png" width="70%">
+<br><img src="Port.png" width="70%">
+
+<br><img src="OurWebpage.png" width="70%">
 
 ## What to submit
 
