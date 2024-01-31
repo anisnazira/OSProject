@@ -183,7 +183,7 @@ __It got deleted__.
 ***Questions:***
 
 1. Are files in the container persistent. Why not?. ***(1 mark)*** <br> __Files in a container are not persistent because containers are designed to be temporary and easily disposaable. When a container is deleted, its filesystem and any files inside it are also deleted__.
-2. Can we run two, or three instances of debian linux? . ***(1 mark)*** <br> __Yes, because each container acts like a separate debian linux system, allowing you to run multiple instances at once__.
+2. Can we run two, or three instances of debian linux? . ***(1 mark)*** <br> __Yes, because each container acts like a separate debian linux system, allowing running multiple instances at once__.
 
 ## Running your own container with persistent storage
 
@@ -235,11 +235,9 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 
 ***Questions:***
 
-1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** <br><img src="WebpagePermission.png" width="70%"> <br>__User: 1000 <br>Group: 1000__.
+1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** <br><img src="WebpagePermission.png" width="70%"> <br>__User: 1000 <br>Group: 1000__
 2. What port is the apache web server running. ***(1 mark)*** <br> __8080__.
-3. What port is open for http protocol on the host machine? ***(1 mark)*** <br> __8080__.
-
-<br><img src="Port.png" width="70%">
+3. What port is open for http protocol on the host machine? ***(1 mark)*** <br> __8080__.<br><img src="Port.png" width="70%">
 
 <br><img src="OurWebpage.png" width="70%">
 
